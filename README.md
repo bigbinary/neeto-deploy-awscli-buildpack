@@ -1,4 +1,4 @@
-# AWS CLU Buildpack
+# AWS CLI Buildpack
 
 This is a NeetoReview buildpack for setting up AWS CLI in your environment.
 
