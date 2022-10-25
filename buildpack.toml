@@ -1,0 +1,8 @@
+api = "0.7"
+
+[buildpack]
+  id = "neeto-review/kubectl"
+  version = "0.0.1"
+
+[[stacks]]
+  id = "heroku-20"

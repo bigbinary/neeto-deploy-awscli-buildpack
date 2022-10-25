@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "---> AWS CLI Buildpack"
+
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+
+HOME_DIR=$(pwd)
+TARGET_DIR=$HOME_DIR/.awscli
+mkdir -p $TARGET_DIR
+
+PROFILE_DIR=$HOME_DIR/.profile.d/
+
+cd $TARGET_DIR && curl -L https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscli.zip;
+cd $TARGET_DIR && unzip awscli.zip
+
+mkdir -p $PROFILE_DIR
+cp $BP_DIR/profile/awscli.sh $PROFILE_DIR
+cat $BP_DIR/profile/awscli.sh >> $HOME_DIR/.bashrc
