@@ -1,7 +1,7 @@
 api = "0.7"
 
 [buildpack]
-  id = "neeto-review/kubectl"
+  id = "neeto-review/awscli"
   version = "0.0.1"
 
 [[stacks]]
